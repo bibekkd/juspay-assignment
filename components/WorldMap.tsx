@@ -52,7 +52,7 @@ export const WorldMap = () => {
                         <circle r={20} fill="#FFFFFF" opacity={1} />
                         {/* Inner Marker - Strictly 4px (r=2) */}
                         <circle
-                            r={15}
+                            r={12}
                             fill="#C6C7F8" // var(--Primary-Brand)
                             stroke="#C6C7F8"
                             strokeWidth={1}

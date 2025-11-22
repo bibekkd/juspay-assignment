@@ -1,13 +1,7 @@
 import React from 'react';
 import { Icons } from '@/components/Icons';
 import { WorldMap } from './WorldMap';
-
-interface LocationData {
-    name: string;
-    value: string;
-    percentage: number;
-    color: string;
-}
+import { LocationData } from '@/types';
 
 const locationData: LocationData[] = [
     { name: 'New York', value: '72K', percentage: 75, color: 'bg-black dark:bg-bw-sky-light' },

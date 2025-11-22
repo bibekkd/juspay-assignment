@@ -117,22 +117,24 @@ const OrderListView: React.FC = () => {
             <h2 className="text-sm font-semibold mb-4 text-gray-900 dark:text-white">Order List</h2>
 
             {/* Toolbar */}
-            <div className="bg-bw-card-light dark:bg-bw-card-dark p-2 rounded-lg mb-4 flex flex-col gap-2">
+            <div className="bg-bw-card-light dark:bg-bw-card-dark p-1 rounded-lg mt-2 mb-4 flex flex-col h-[44px] gap-2">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                     <div className="flex items-center gap-2 w-full md:w-auto">
-                        <button className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded transition-colors"><Icons.Plus size={18} className="text-gray-500 dark:text-gray-400" /></button>
+                        <button className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded transition-colors"><Icons.Plus size={18} className="text-gray-500 dark:text-white" /></button>
                         <button
                             onClick={() => setShowFilter(!showFilter)}
-                            className={`p-2 rounded transition-colors ${showFilter ? 'bg-gray-200 dark:bg-white/20 text-gray-900 dark:text-white' : 'hover:bg-gray-200 dark:hover:bg-white/10 text-gray-500 dark:text-gray-400'}`}
+                            className={`p-2 rounded transition-colors ${showFilter ? 'bg-gray-200 dark:bg-white/20 text-gray-900 dark:text-white' : 'hover:bg-gray-200 dark:hover:bg-white/10 text-gray-500 dark:text-white'}`}
                         >
-                            <Icons.Filter size={18} />
+                            <Icons.Filter className='text-gray-500 dark:text-white'
+                                color='currentColor'
+                            />
                         </button>
                         <button
                             onClick={() => handleSort('date')}
                             className="p-2 hover:bg-gray-200 dark:hover:bg-white/10 rounded transition-colors"
                             title="Sort by Date"
                         >
-                            <Icons.Sort size={18} className="text-gray-500 dark:text-gray-400" />
+                            <Icons.Sort size={18} className="text-gray-500 dark:text-white" />
                         </button>
                     </div>
                     <div className="relative w-full md:w-64">
@@ -150,7 +152,7 @@ const OrderListView: React.FC = () => {
                 {/* Filter Row */}
                 <div className={`overflow-hidden transition-all duration-300 ${showFilter ? 'max-h-12 opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
                     <div className="flex items-center gap-2 text-sm">
-                        <span className="text-gray-500 dark:text-gray-400">Status:</span>
+                        <span className="text-gray-500 dark:text-white">Status:</span>
                         {['All', 'In Progress', 'Complete', 'Pending', 'Approved', 'Rejected'].map((status) => (
                             <button
                                 key={status}

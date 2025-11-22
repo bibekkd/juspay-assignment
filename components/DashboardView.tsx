@@ -1,30 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, CartesianGrid } from 'recharts';
 import { Icons } from '@/components/Icons';
 import { StatCard } from './StatCard';
 import { ProjectionsChart } from './ProjectionsChart';
 import { TopSellingProducts } from './TopSellingProducts';
 import { TotalSalesChart } from './TotalSalesChart';
 import { RevenueByLocation } from './RevenueByLocation';
-
-// Mock Data
-const projectionData = [
-    { name: 'Jan', actual: 16, projection: 5 },
-    { name: 'Feb', actual: 20, projection: 5 },
-    { name: 'Mar', actual: 17, projection: 5 },
-    { name: 'Apr', actual: 22, projection: 6 },
-    { name: 'May', actual: 15, projection: 4 },
-    { name: 'Jun', actual: 20, projection: 5 },
-];
-
-const revenueData = [
-    { name: 'Jan', current: 10, previous: 8 },
-    { name: 'Feb', current: 15, previous: 12 },
-    { name: 'Mar', current: 12, previous: 14 },
-    { name: 'Apr', current: 8, previous: 10 },
-    { name: 'May', current: 14, previous: 12 },
-    { name: 'Jun', current: 22, previous: 18 },
-];
+import { RevenueChart } from './RevenueChart';
+import { projectionData, revenueData } from '@/data/dashboardData';
 
 
 
@@ -96,31 +78,7 @@ const DashboardView: React.FC = () => {
             {/* Revenue and Location Row */}
             <div className="flex flex-col xl:flex-row gap-6">
                 {/* Revenue Line Chart */}
-                <div className="flex-[4] bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6">
-                    <div className="flex items-center gap-8 mb-6 pl-4">
-                        <h3 className="text-sm font-semibold text-gray-900 dark:text-white border border-r-bw-border-dark pr-4">Revenue</h3>
-                        <div className="flex items-center gap-2 text-xs">
-                            <span className="w-2 h-2 rounded-full bg-black dark:bg-bw-border-selected"></span>
-                            <span className="text-gray-900 dark:text-white">Current Week $58,211</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-xs">
-                            <span className="w-2 h-2 rounded-full bg-bw-sky-light"></span>
-                            <span className="text-gray-500 dark:text-gray-400">Previous Week $68,768</span>
-                        </div>
-                    </div>
-                    <div className="h-[200px]">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={revenueData}>
-                                <CartesianGrid vertical={false} strokeDasharray="0" stroke="#FFFFFF1A" />
-                                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} dy={10} />
-                                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94a3b8', fontSize: 12 }} />
-                                <Tooltip contentStyle={{ borderRadius: '8px', border: 'none', backgroundColor: 'var(--card)', color: 'var(--foreground)' }} />
-                                <Line type="monotone" dataKey="current" stroke="var(--chart-line-current)" strokeWidth={3} dot={false} />
-                                <Line type="monotone" dataKey="previous" stroke="var(--chart-line-previous)" strokeWidth={3} dot={false} />
-                            </LineChart>
-                        </ResponsiveContainer>
-                    </div>
-                </div>
+                <RevenueChart data={revenueData} />
 
                 {/* Revenue by Location */}
                 <RevenueByLocation />

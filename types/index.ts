@@ -1,3 +1,4 @@
+// Order Types
 export interface Order {
     id: string;
     user: {
@@ -10,6 +11,7 @@ export interface Order {
     status: 'In Progress' | 'Complete' | 'Pending' | 'Approved' | 'Rejected';
 }
 
+// Notification Types
 export interface NotificationItem {
     id: string;
     type: 'bug' | 'user' | 'subscribe' | 'version';
@@ -19,7 +21,28 @@ export interface NotificationItem {
     initials?: string;
 }
 
+// Contact Types
 export interface Contact {
     name: string;
     avatar: string;
+}
+
+// Dashboard Data Types
+export interface ProjectionDataPoint {
+    name: string;
+    actual: number;
+    projection: number;
+}
+
+export interface RevenueDataPoint {
+    name: string;
+    current: number;
+    previous: number;
+}
+
+export interface LocationData {
+    name: string;
+    value: string;
+    percentage: number;
+    color: string;
 }

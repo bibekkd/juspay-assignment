@@ -19,7 +19,7 @@ export const StatCard: React.FC<StatCardProps> = ({ title, value, change, trend,
             <h3 className="mt-1 text-sm font-semibold font-inter">{title}</h3>
             <div className="flex mb-1 items-center gap-8">
                 <span className="font-inter text-[24px] font-semibold">{value}</span>
-                <span className="text-xs font-medium flex font-inter items-center">
+                <span className="text-xs font-medium flex font-inter items-center gap-1">
                     {change}
                     {trend === 'up' ? (
                         <Icons.ArrowUp className={`${arrowColorClass} w-4 h-4`} color="currentColor" />
