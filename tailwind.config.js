@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['var(--font-inter)', 'sans-serif'],
+                inter: ['var(--font-inter)', 'sans-serif'],
             },
             fontSize: {
                 'ag-14': ['14px', '20px'],
@@ -53,7 +54,7 @@ module.exports = {
                 'bw-bg-light': '#F7F9FB',
                 'bw-bg-dark': '#1C1C1C',
                 'bw-card-light': '#F7F9FB',
-                'bw-card-dark': '#1C1C1C',
+                'bw-card-dark': '#FFFFFF0D',
                 'bw-customer-light': '#E3F5FF',
                 'bw-growth-light': '#E5ECF6',
                 "bw-border-dark": "#FFFFFF1A",

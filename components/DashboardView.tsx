@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, CartesianGrid } from 'recharts';
 import { Icons } from '@/components/Icons';
+import { StatCard } from './StatCard';
+import { ProjectionsChart } from './ProjectionsChart';
 
 // Mock Data
 const projectionData = [
@@ -41,77 +43,54 @@ const DashboardView: React.FC = () => {
 
     return (
         <div className="flex-1 p-6 space-y-6 overflow-y-auto h-full">
-            <h2 className="text-sm font-semibold mb-4 text-gray-900 dark:text-white">eCommerce</h2>
+            <h2 className="text-sm text-ag-14 font-semibold mb-4 text-gray-900 dark:text-white">eCommerce</h2>
 
             {/* Grid for Top Section */}
             <div className="flex flex-col xl:flex-row gap-6">
                 {/* Left Column Group */}
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Row 1 */}
-                    <div className="bg-bw-customer-light dark:bg-bw-customer-light/10 rounded-2xl p-6 flex flex-col justify-between h-[160px]">
-                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">Customers</h3>
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl font-bold text-gray-900 dark:text-white">3,781</span>
-                            <span className="text-xs font-medium flex items-center text-gray-900 dark:text-white">+11.01% <Icons.ArrowUp className="text-[#1C1C1C] dark:text-white w-4 h-4" color="currentColor" /></span>
-                        </div>
-                    </div>
+                    <StatCard
+                        title="Customers"
+                        value="3,781"
+                        change="+11.01%"
+                        trend="up"
+                        className="bg-bw-customer-light dark:bg-bw-customer-light"
+                        isLightBackground={true}
+                    />
 
-                    <div className="bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6 flex flex-col justify-between h-[160px]">
-                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">Orders</h3>
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl font-bold text-gray-900 dark:text-white">1,219</span>
-                            <span className="text-xs font-medium flex items-center text-black dark:text-white">-0.03% <Icons.ArrowDown className="w-4 h-4" color="currentColor" /></span>
-                        </div>
-                    </div>
+                    <StatCard
+                        title="Orders"
+                        value="1,219"
+                        change="-0.03%"
+                        trend="down"
+                        className="bg-bw-card-light dark:bg-bw-card-dark"
+                    />
 
                     {/* Row 2 */}
-                    <div className="bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6 flex flex-col justify-between h-[160px]">
-                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">Revenue</h3>
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl font-bold text-gray-900 dark:text-white">$695</span>
-                            <span className="text-xs font-medium flex items-center text-gray-900 dark:text-white">+15.03% <Icons.ArrowUp className="text-[#1C1C1C] dark:text-white w-4 h-4" color="currentColor" /></span>
-                        </div>
-                    </div>
+                    <StatCard
+                        title="Revenue"
+                        value="$695"
+                        change="+15.03%"
+                        trend="up"
+                        className="bg-bw-card-light dark:bg-bw-card-dark"
+                    />
 
-                    <div className="bg-bw-growth-light dark:bg-bw-growth-light/10 rounded-2xl p-6 flex flex-col justify-between h-[160px]">
-                        <h3 className="text-sm font-medium text-gray-900 dark:text-white">Growth</h3>
-                        <div className="flex items-center gap-2">
-                            <span className="text-2xl font-bold text-gray-900 dark:text-white">30.1%</span>
-                            <span className="text-xs font-medium flex items-center text-gray-900 dark:text-white">+6.08% <Icons.ArrowUp className="text-[#1C1C1C] dark:text-white w-4 h-4" color="currentColor" /></span>
-                        </div>
-                    </div>
+                    <StatCard
+                        title="Growth"
+                        value="30.1%"
+                        change="+6.08%"
+                        trend="up"
+                        className="bg-bw-growth-light dark:bg-bw-growth-light"
+                        isLightBackground={true}
+                    />
                 </div>
 
                 {/* Right Column Group (Projections) */}
-                <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6 h-[344px]">
-                    <h3 className="text-sm font-semibold mb-6 text-gray-900 dark:text-white">Projections vs Actuals</h3>
-                    <div className="h-[250px]">
-                        <ResponsiveContainer width="100%" height="100%">
-                            <BarChart data={projectionData} barSize={28}>
-                                <CartesianGrid vertical={false} strokeDasharray="0" stroke="var(--chart-grid)" />
-                                <XAxis
-                                    dataKey="name"
-                                    axisLine={false}
-                                    tickLine={false}
-                                    tick={{ fill: '#94a3b8', fontSize: 12 }}
-                                    dy={10}
-                                />
-                                <YAxis
-                                    axisLine={false}
-                                    tickLine={false}
-                                    tick={{ fill: '#94a3b8', fontSize: 12 }}
-                                    tickFormatter={(value) => `${value}M`}
-                                    domain={[0, 30]}
-                                    ticks={[0, 10, 20, 30]}
-                                />
-                                <Tooltip
-                                    cursor={{ fill: 'transparent' }}
-                                    contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', backgroundColor: 'var(--card)', color: 'var(--foreground)' }}
-                                />
-                                <Bar dataKey="actual" stackId="a" fill="var(--chart-actual)" radius={[0, 0, 0, 0]} />
-                                <Bar dataKey="projection" stackId="a" fill="var(--chart-projection)" radius={[4, 4, 0, 0]} />
-                            </BarChart>
-                        </ResponsiveContainer>
+                <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark p-2 rounded-2xl h-[252px]">
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white font-inter m-5">Projections vs Actuals</h3>
+                    <div className="mx-5 h-[160px]">
+                        <ProjectionsChart data={projectionData} />
                     </div>
                 </div>
             </div>
