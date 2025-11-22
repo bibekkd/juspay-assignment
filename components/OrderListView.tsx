@@ -109,7 +109,7 @@ const OrderListView: React.FC = () => {
 
     const renderSortIcon = (key: SortKey) => {
         if (sortConfig.key !== key) return <Icons.Sort size={14} className="ml-1 opacity-0 group-hover:opacity-50" />;
-        return sortConfig.direction === 'asc' ? <Icons.ArrowUp size={14} className="ml-1" /> : <Icons.ArrowDown size={14} className="ml-1" />;
+        return sortConfig.direction === 'asc' ? <Icons.ArrowUp className="ml-1" /> : <Icons.ArrowDown className="ml-1" />;
     };
 
     return (
@@ -255,7 +255,7 @@ const OrderListView: React.FC = () => {
                         disabled={currentPage === 1}
                         className="p-1 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
                     >
-                        <Icons.ArrowDown className="rotate-90" size={16} />
+                        <Icons.ArrowDown className="rotate-90" />
                     </button>
 
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -275,7 +275,7 @@ const OrderListView: React.FC = () => {
                         disabled={currentPage === totalPages || totalPages === 0}
                         className="p-1 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
                     >
-                        <Icons.ArrowUp className="rotate-90" size={16} />
+                        <Icons.ArrowUp className="rotate-90" />
                     </button>
                 </div>
             </div>
