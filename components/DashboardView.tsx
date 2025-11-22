@@ -5,6 +5,7 @@ import { StatCard } from './StatCard';
 import { ProjectionsChart } from './ProjectionsChart';
 import { TopSellingProducts } from './TopSellingProducts';
 import { TotalSalesChart } from './TotalSalesChart';
+import { RevenueByLocation } from './RevenueByLocation';
 
 // Mock Data
 const projectionData = [
@@ -121,26 +122,8 @@ const DashboardView: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Location Map (Simplified) */}
-                <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6">
-                    <h3 className="text-sm font-semibold mb-4 text-gray-900 dark:text-white">Revenue by Location</h3>
-                    <div className="h-[100px] flex items-center justify-center mb-4 opacity-50">
-                        <Icons.Globe size={64} className="text-gray-300 dark:text-gray-600" />
-                    </div>
-                    <div className="space-y-3">
-                        <div className="flex justify-between text-xs mb-1 text-gray-900 dark:text-white"><span>New York</span><span>72K</span></div>
-                        <div className="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full"><div className="h-full bg-black dark:bg-white w-3/4 rounded-full"></div></div>
-
-                        <div className="flex justify-between text-xs mb-1 mt-2 text-gray-900 dark:text-white"><span>San Francisco</span><span>39K</span></div>
-                        <div className="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full"><div className="h-full bg-blue-300 w-1/2 rounded-full"></div></div>
-
-                        <div className="flex justify-between text-xs mb-1 mt-2 text-gray-900 dark:text-white"><span>Sydney</span><span>25K</span></div>
-                        <div className="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full"><div className="h-full bg-purple-300 w-1/3 rounded-full"></div></div>
-
-                        <div className="flex justify-between text-xs mb-1 mt-2 text-gray-900 dark:text-white"><span>Singapore</span><span>61K</span></div>
-                        <div className="h-1 w-full bg-gray-200 dark:bg-gray-700 rounded-full"><div className="h-full bg-orange-200 w-2/3 rounded-full"></div></div>
-                    </div>
-                </div>
+                {/* Revenue by Location */}
+                <RevenueByLocation />
             </div>
 
             {/* Bottom Row: Table and Donut */}
