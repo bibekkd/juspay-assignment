@@ -28,14 +28,14 @@ const contacts: Contact[] = [
 
 const RightSidebar: React.FC = () => {
     return (
-        <aside className="w-72 h-screen border-l border-gray-200 dark:border-gray-800 bg-white dark:bg-bw-sidebar-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
+        <aside className="w-[280px] h-screen border-l border-gray-200 dark:border-bw-border-dark bg-white dark:bg-bw-sidebar-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
             {/* Notifications */}
             <div className="mb-8">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Notifications</h3>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-inter mt-4">Notifications</h3>
                 <div className="space-y-4">
                     {notifications.map((item) => (
                         <div key={item.id} className="flex gap-3">
-                            <div className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-200 flex items-center justify-center text-xs font-bold shrink-0">
+                            <div className="w-6 h-6 rounded-sm bg-[#E3F5FF] text-blue-600 dark:bg-[#E3F5FF] dark:text-[#1C1C1C] flex items-center justify-center text-xs font-bold shrink-0">
                                 {item.type === 'bug' ? <Icons.Bug /> :
                                     item.type === 'user' ? <Icons.Person /> :
                                         <Icons.Wave />
@@ -43,7 +43,7 @@ const RightSidebar: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-xs text-gray-400">{item.time}</p>
+                                <p className="text-[12px] text-bw-text-dark">{item.time}</p>
                             </div>
                         </div>
                     ))}
@@ -53,15 +53,15 @@ const RightSidebar: React.FC = () => {
             {/* Activities */}
             <div className="mb-8">
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Activities</h3>
-                <div className="relative border-l border-gray-200 dark:border-gray-700 ml-3 space-y-6">
+                <div className="relative border-l border-gray-200 dark:border-bw-border-dark ml-3 space-y-6">
                     {activities.map((item) => (
                         <div key={item.id} className="pl-6 relative">
-                            <div className="absolute -left-[13px] top-0 bg-white dark:bg-bw-sidebar-dark p-0.5">
-                                <img src={item.avatar} className="w-6 h-6 rounded-full" alt="Avatar" />
+                            <div className="absolute -left-[13px] top-0 bg-white dark:bg-bw-sidebar-dark ">
+                                <img src={item.avatar} className="w-6 h-6 rounded-full my-1" alt="Avatar" />
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-xs text-gray-400">{item.time}</p>
+                                <p className="text-[12px] text-bw-text-dark">{item.time}</p>
                             </div>
                         </div>
                     ))}

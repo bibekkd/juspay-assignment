@@ -37,9 +37,9 @@ export default function Home() {
       )}
 
       {/* Main Sidebar Container - Controls width for collapse/expand */}
-      <div className={`${leftSidebarOpen ? 'w-64' : 'w-0'} transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 h-full relative`}>
+      <div className={`${leftSidebarOpen ? 'w-[212px]' : 'w-0'} transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 h-full relative`}>
         {/* Inner container for fixed width content to prevent squashing during transition */}
-        <div className="w-64 h-full">
+        <div className="w-[212px] h-full">
           <Sidebar activeView={currentView} onChangeView={setCurrentView} />
         </div>
       </div>
@@ -48,13 +48,13 @@ export default function Home() {
       <main className="flex-1 flex flex-col min-w-0 h-full">
 
         {/* Header */}
-        <header className="h-16 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between px-6 bg-white dark:bg-bw-sidebar-dark transition-colors flex-shrink-0 z-10">
+        <header className="h-[68px] border-b border-gray-200 dark:border-bw-border-dark flex items-center justify-between px-6 bg-white dark:bg-bw-sidebar-dark transition-colors flex-shrink-0 z-10">
           <div className="flex items-center gap-4">
             <button onClick={toggleLeftSidebar} className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white">
               <Icons.Sidebar className={`transform transition-transform duration-300 ${leftSidebarOpen ? 'rotate-180' : 'rotate-0'}`} color={darkMode ? '#fff' : '#000'} />
             </button>
             <Icons.Star className="text-gray-400 hover:text-yellow-400 cursor-pointer transition-colors" color={darkMode ? '#fff' : '#000'} />
-            <div className="flex items-center gap-2 text-gray-400 text-sm hidden sm:flex">
+            <div className="flex items-center gap-4 text-bw-text-dark text-sm hidden sm:flex">
               <span className="hover:text-gray-900 dark:hover:text-white cursor-pointer">Dashboards</span>
               <span>/</span>
               <span className="text-gray-900 dark:text-white">{currentView === 'orders' ? 'Order List' : 'Default'}</span>
@@ -63,13 +63,13 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <div className="relative hidden md:block">
-              <Icons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+              <Icons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-bw-text-light-dark" size={16} />
               <input
                 type="text"
                 placeholder="Search"
-                className="pl-9 pr-12 py-1.5 bg-gray-100 dark:bg-white/10 rounded-lg text-sm text-gray-900 dark:text-white outline-none focus:ring-2 focus:ring-blue-100 transition-all w-48"
+                className="pl-9 pr-12 py-1.5 bg-gray-100 dark:bg-white/10 rounded-sm dark:text-bw-text-light-dark text-sm dark:text-white outline-none focus:ring-2 focus:ring-blue-100 transition-all w-[160px] dark:placeholder-bw-text-light-dark"
               />
-              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs">⌘/</span>
+              <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xs dark:text-bw-text-light-dark">⌘/</span>
             </div>
 
             <button onClick={() => setDarkMode(!darkMode)} className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors">

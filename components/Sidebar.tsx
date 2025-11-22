@@ -14,12 +14,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
     const navItemClass = (viewName: string) => `
     flex items-center gap-2 px-3 py-1.5 rounded-sm cursor-pointer text-ag-14 transition-colors mb-1 relative
     ${activeView === viewName
-            ? 'bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-medium before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-4 before:w-1 before:bg-bw-border-selected before:rounded-r-sm'
+            ? 'bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-medium before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-4.5 before:w-1 before:bg-bw-border-selected before:rounded-full'
             : 'text-gray-500 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5'}
   `;
 
     return (
-        <aside className="w-64 h-screen flex flex-col border-r border-[#FFFFFF1A] dark:border-gray-800 bg-white dark:bg-bw-sidebar-dark transition-colors duration-300 flex-shrink-0">
+        <aside className="w-[212px] h-screen flex flex-col border-r border-gray-400 dark:border-bw-border-dark bg-white dark:bg-bw-sidebar-dark transition-colors duration-300 flex-shrink-0">
             {/* User / Brand Area */}
             <div className="p-4 flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
