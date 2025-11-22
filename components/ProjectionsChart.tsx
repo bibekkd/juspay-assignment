@@ -9,7 +9,12 @@ export const ProjectionsChart: React.FC<ProjectionsChartProps> = ({ data }) => {
     return (
         <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} barSize={20} margin={{ top: 8, right: 10, left: -20, bottom: 0 }}>
-                <CartesianGrid vertical={false} strokeDasharray="0" stroke="#FFFFFF10" />
+                <CartesianGrid
+                    vertical={false}
+                    strokeDasharray="0"
+                    stroke="#FFFFFF1A"
+                    strokeWidth={1}
+                />
                 <XAxis
                     dataKey="name"
                     axisLine={false}

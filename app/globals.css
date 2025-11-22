@@ -63,10 +63,10 @@
     --chart-grid: #334155;
     --chart-line-current: #FFFFFF;
     --chart-line-previous: #3b82f6;
-    --chart-donut-1: #C6C7F8;
-    --chart-donut-2: #BAEDBD;
-    --chart-donut-3: #95A4FC;
     --chart-donut-4: #B1E3FF;
+    --chart-donut-1: #C6C7F8;
+    --chart-donut-2: #95A4FC;
+    --chart-donut-3: #BAEDBD;
   }
 }
 

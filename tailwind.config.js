@@ -61,6 +61,8 @@ module.exports = {
                 "bw-text-dark": "#FFFFFF66",
                 "bw-text-light-dark": "#FFFFFF33",
                 "bw-border-selected": "#C6C7F8",
+                "bw-sky-light": "#A8C5DA",
+                "bw-tooltip-bg": "#1C1C1CCC",
             },
             borderRadius: {
                 lg: "var(--radius)",
