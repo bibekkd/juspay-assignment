@@ -14,7 +14,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
     const navItemClass = (viewName: string) => `
     flex items-center gap-2 px-3 py-1.5 rounded-sm cursor-pointer text-ag-14 transition-colors mb-1 relative dark:text-white
     ${activeView === viewName
-            ? 'bg-bw-nav-hover-light dark:bg-bw-border-dark before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-4.5 before:w-1 before:bg-bw-purple before:dark:bg-bw-bg-dark before:rounded-full'
+            ? "bg-bw-nav-hover-light dark:bg-bw-border-dark before:content-[''] before:block before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-[18px] before:w-1 before:bg-bw-bg-dark before:dark:bg-bw-purple before:rounded-full before:z-10"
             : 'hover:bg-bw-nav-hover-light dark:hover:bg-bw-border-dark'}
   `;
 
