@@ -1,5 +1,5 @@
-import React from "react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
+import { useDarkMode } from "@/hooks/useDarkMode";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
@@ -11,6 +11,11 @@ const markers = [
 ];
 
 export const WorldMap = () => {
+
+    const isDark = useDarkMode();
+
+    const markerStrokeColor = isDark ? '#C6C7F8' : '#1C1C1C';
+
     return (
         <div className="w-full h-full flex items-center justify-center">
             <svg style={{ position: 'absolute', width: 0, height: 0 }}>
@@ -53,8 +58,8 @@ export const WorldMap = () => {
                         {/* Inner Marker - Strictly 4px (r=2) */}
                         <circle
                             r={12}
-                            fill="#1C1C1C"
-                            stroke="#1C1C1C"
+                            fill={markerStrokeColor}
+                            stroke={markerStrokeColor}
                             strokeWidth={1}
                             opacity={1}
                         />

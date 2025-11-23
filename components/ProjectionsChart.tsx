@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from 'recharts';
+import { useDarkMode } from '@/hooks/useDarkMode';
 
 interface ProjectionsChartProps {
     data: any[];
 }
 
 export const ProjectionsChart: React.FC<ProjectionsChartProps> = ({ data }) => {
-    const [isDark, setIsDark] = useState(false);
-
-    useEffect(() => {
-        // Check initial dark mode state
-        setIsDark(document.documentElement.classList.contains('dark'));
-
-        // Watch for dark mode changes
-        const observer = new MutationObserver(() => {
-            setIsDark(document.documentElement.classList.contains('dark'));
-        });
-
-        observer.observe(document.documentElement, {
-            attributes: true,
-            attributeFilter: ['class']
-        });
-
-        return () => observer.disconnect();
-    }, []);
+    const isDark = useDarkMode();
 
     const gridColor = isDark ? '#FFFFFF1A' : '#1C1C1C0D';
     const axisColor = isDark ? '#FFFFFF66' : '#1C1C1C66';

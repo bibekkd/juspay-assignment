@@ -1,12 +1,19 @@
 import React from 'react';
 import { XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, CartesianGrid } from 'recharts';
 import { RevenueDataPoint } from '@/types';
+import { useDarkMode } from '@/hooks/useDarkMode';
 
 interface RevenueChartProps {
     data: RevenueDataPoint[];
 }
 
 export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
+    const isDark = useDarkMode();
+
+    const gridColor = isDark ? '#FFFFFF1A' : '#1C1C1C0D';
+    const axisColor = isDark ? '#FFFFFF66' : '#1C1C1C66';
+    const lineColor = isDark ? '#C6C7F8' : '#1C1C1C';
+
     // Split the 'previous' line into solid and dashed segments
     // We'll make the last few points dashed to simulate a projection/future state
     const splitIndex = Math.max(0, data.length - 3);
@@ -19,12 +26,13 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
         previousDashed: index >= splitIndex ? item.previous : null,
     }));
 
+
     return (
         <div className="flex-[4] bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6 relative overflow-hidden">
             {/* Gradient Overlays for Peaks */}
             {/* Peak 1 (Feb/Mar) - Cyan Glow between lines */}
             <div
-                className="absolute top-[40%] left-[25%] w-[80px] h-[60px] pointer-events-none blur-2xl"
+                className={`absolute ${isDark ? 'top-[46%] left-[12%] w-[300px] h-[20px] pointer-events-none blur-xl' : 'top-[42%] left-[15%] w-[250px] h-[30px] pointer-events-none blur-lg'}`}
                 style={{
                     background: 'radial-gradient(circle, rgba(168, 197, 218, 0.6) 0%, rgba(168, 197, 218, 0) 65%)',
                     zIndex: 0
@@ -56,20 +64,20 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
                         <CartesianGrid
                             vertical={false}
                             strokeDasharray="0"
-                            stroke="#FFFFFF1A"
+                            stroke={gridColor}
                             strokeWidth={1}
                         />
                         <XAxis
                             dataKey="name"
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fill: '#FFFFFF66', fontSize: 12 }}
+                            tick={{ fill: axisColor, fontSize: 12 }}
                             dy={10}
                         />
                         <YAxis
                             axisLine={false}
                             tickLine={false}
-                            tick={{ fill: '#FFFFFF66', fontSize: 12 }}
+                            tick={{ fill: axisColor, fontSize: 12 }}
                             tickFormatter={(value) => `${value}M`}
                         />
                         <Tooltip
@@ -95,7 +103,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
                         <Line
                             type="monotone"
                             dataKey="previousSolid"
-                            stroke="#C6C7F8"
+                            stroke={lineColor}
                             strokeWidth={3}
                             dot={false}
                         />
@@ -104,7 +112,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
                         <Line
                             type="monotone"
                             dataKey="previousDashed"
-                            stroke="#C6C7F8"
+                            stroke={lineColor}
                             strokeWidth={3}
                             strokeDasharray="5 5"
                             dot={false}

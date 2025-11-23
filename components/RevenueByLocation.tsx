@@ -20,8 +20,8 @@ export const RevenueByLocation: React.FC = () => {
                         </div>
                         <div className="h-0.5 w-full bg-gray-200 dark:bg-bw-sky-light-44 rounded-full">
                             <div
-                                className={`h-full ${location.color} rounded-full`}
-                                style={{ width: `${location.percentage}%` }}
+                                className="h-full rounded-full"
+                                style={{ width: `${location.percentage}%`, backgroundColor: location.color }}
                             ></div>
                         </div>
                     </div>
