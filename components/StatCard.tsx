@@ -15,7 +15,7 @@ export const StatCard: React.FC<StatCardProps> = ({ title, value, change, trend,
     const arrowColorClass = isLightBackground ? "text-bw-bg-dark" : "text-bw-bg-dark dark:text-white";
 
     return (
-        <div className={`rounded-2xl p-4 sm:p-6 flex flex-col justify-between w-full min-h-[112px] ${textColorClass} ${className}`}>
+        <div className={`rounded-2xl p-4 sm:p-6 flex flex-col justify-between w-full max-h-[112px] ${textColorClass} ${className}`}>
             <h3 className="mt-1 text-sm font-semibold font-inter">{title}</h3>
             <div className="flex hover:flex-row-reverse hover:justify-end flex-wrap mb-1 items-center gap-6">
                 <div className="font-inter text-xl sm:text-[24px] font-semibold">{value}</div>
