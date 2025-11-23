@@ -34,8 +34,8 @@ export const WorldMap = () => {
                             <Geography
                                 key={geo.rsmKey}
                                 geography={geo}
-                                fill="#526D82" // Darker slate-blue to match Image 2
-                                stroke="#1C1C1C"
+                                fill="#A8C5DA"
+                                stroke="#A8C5DA"
                                 strokeWidth={0.25}
                                 style={{
                                     default: { outline: "none", filter: "url(#map-shadow)" },
@@ -53,8 +53,8 @@ export const WorldMap = () => {
                         {/* Inner Marker - Strictly 4px (r=2) */}
                         <circle
                             r={12}
-                            fill="#C6C7F8" // var(--Primary-Brand)
-                            stroke="#C6C7F8"
+                            fill="#1C1C1C"
+                            stroke="#1C1C1C"
                             strokeWidth={1}
                             opacity={1}
                         />

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Icons } from '@/components/Icons';
 import { StatCard } from './StatCard';
 import { ProjectionsChart } from './ProjectionsChart';
 import { TopSellingProducts } from './TopSellingProducts';
 import { TotalSalesChart } from './TotalSalesChart';
 import { RevenueByLocation } from './RevenueByLocation';
 import { RevenueChart } from './RevenueChart';
-import { projectionData, revenueData } from '@/data/dashboardData';
+import { projectionData, revenueData } from '@/data';
 
 
 

@@ -46,3 +46,10 @@ export interface LocationData {
     percentage: number;
     color: string;
 }
+
+export interface SalesDataPoint {
+    name: string;
+    value: number;
+    colorVar: string;
+    [key: string]: any;
+}
