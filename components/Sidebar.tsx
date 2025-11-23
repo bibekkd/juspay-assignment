@@ -19,7 +19,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
   `;
 
     return (
-        <aside className="w-[212px] h-screen flex flex-col border-r border-gray-400 dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark transition-colors duration-300 flex-shrink-0">
+        <aside className="w-[212px] h-screen flex flex-col border-r border-bw-border-muted dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark transition-colors duration-300 flex-shrink-0">
             {/* User / Brand Area */}
             <div className="p-4 flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">

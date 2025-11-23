@@ -57,6 +57,7 @@ module.exports = {
                 'bw-card-dark': '#FFFFFF0D',
                 'bw-customer-light': '#E3F5FF',
                 'bw-growth-light': '#E5ECF6',
+                "bw-border-muted": "#1C1C1C1A",
                 "bw-border-dark": "#FFFFFF1A",
                 "bw-text-dark-66": "#FFFFFF66",
                 "bw-text-dark-33": "#FFFFFF33",

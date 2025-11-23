@@ -28,7 +28,7 @@ const contacts: Contact[] = [
 
 const RightSidebar: React.FC = () => {
     return (
-        <aside className="w-[280px] h-screen border-l border-gray-200 dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
+        <aside className="w-[280px] h-screen border-l border-bw-border-muted dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
             {/* Notifications */}
             <div className="mb-8">
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-inter mt-4">Notifications</h3>
@@ -53,7 +53,7 @@ const RightSidebar: React.FC = () => {
             {/* Activities */}
             <div className="mb-8">
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4">Activities</h3>
-                <div className="relative border-l border-gray-200 dark:border-bw-border-dark ml-3 space-y-6">
+                <div className="relative border-l border-bw-border-muted dark:border-bw-border-dark ml-3 space-y-6">
                     {activities.map((item) => (
                         <div key={item.id} className="pl-6 relative">
                             <div className="absolute -left-[13px] top-0 bg-white dark:bg-bw-bg-dark ">
