@@ -12,11 +12,14 @@ A modern, responsive dashboard application built with Next.js 16, featuring a pi
 
 This project is a pixel-perfect implementation of the provided Figma design, ensuring consistency across all screen sizes and maintaining design fidelity.
 
-## 🎥 Demo Video
+## 🎥 Demo 
 
-> **Note:** Add your demo video here to showcase the application's features and responsiveness.
+https://github.com/user-attachments/assets/57b0e535-6ae5-40df-9a0e-47bf351fcedb
 
-[Demo Video Link - To be added]
+
+https://github.com/user-attachments/assets/73d5c94e-f20e-438b-b8c1-ef260383177b
+
+
 
 ## ✨ Features
 
