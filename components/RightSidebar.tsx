@@ -28,7 +28,7 @@ const contacts: Contact[] = [
 
 const RightSidebar: React.FC = () => {
     return (
-        <aside className="w-[280px] h-screen border-l border-gray-200 dark:border-bw-border-dark bg-white dark:bg-bw-sidebar-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
+        <aside className="w-[280px] h-screen border-l border-gray-200 dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
             {/* Notifications */}
             <div className="mb-8">
                 <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-inter mt-4">Notifications</h3>
@@ -43,7 +43,7 @@ const RightSidebar: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-[12px] text-bw-text-dark">{item.time}</p>
+                                <p className="text-[12px] text-bw-text-dark-66">{item.time}</p>
                             </div>
                         </div>
                     ))}
@@ -56,12 +56,12 @@ const RightSidebar: React.FC = () => {
                 <div className="relative border-l border-gray-200 dark:border-bw-border-dark ml-3 space-y-6">
                     {activities.map((item) => (
                         <div key={item.id} className="pl-6 relative">
-                            <div className="absolute -left-[13px] top-0 bg-white dark:bg-bw-sidebar-dark ">
+                            <div className="absolute -left-[13px] top-0 bg-white dark:bg-bw-bg-dark ">
                                 <img src={item.avatar} className="w-6 h-6 rounded-full my-1" alt="Avatar" />
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-[12px] text-bw-text-dark">{item.time}</p>
+                                <p className="text-[12px] text-bw-text-dark-66">{item.time}</p>
                             </div>
                         </div>
                     ))}

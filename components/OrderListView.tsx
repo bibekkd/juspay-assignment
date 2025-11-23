@@ -139,13 +139,13 @@ const OrderListView: React.FC = () => {
                         </button>
                     </div>
                     <div className="flex items-center gap-2 w-[160px] h-[28px] bg-white dark:bg-bw-bg-dark-66 border border-gray-200 dark:border-bw-border-dark rounded-lg px-2 py-1">
-                        <Icons.Search className="text-gray-400 dark:text-bw-text-light-dark" size={16} />
+                        <Icons.Search className="text-gray-400 dark:text-bw-text-dark-33" size={16} />
                         <input
                             type="text"
                             placeholder="Search"
                             value={searchTerm}
                             onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                            className="w-full bg-transparent text-sm text-gray-900 dark:text-bw-text-light-dark placeholder:text-gray-400 dark:placeholder:text-bw-text-light-dark outline-none"
+                            className="w-full bg-transparent text-sm text-gray-900 dark:text-bw-text-dark-33 placeholder:text-gray-400 dark:placeholder:text-bw-text-dark-33 outline-none"
                         />
                     </div>
                 </div>
@@ -172,12 +172,12 @@ const OrderListView: React.FC = () => {
             {/* Table Container */}
             <div className="flex-1 bg-bw-card-light dark:bg-transparent overflow-hidden flex flex-col">
                 <div className="overflow-x-auto flex-1 scrollbar-hide">
-                    <table className="w-full text-sm text-left text-bw-text-dark dark:text-bw-text-dark">
-                        <thead className="text-xs text-bw-text-dark dark:text-bw-text-dark bg-transparent border-b border-gray-200 dark:border-bw-text-dark">
+                    <table className="w-full text-sm text-left text-bw-text-dark-66 dark:text-bw-text-dark-66">
+                        <thead className="text-xs text-bw-text-dark-66 dark:text-bw-text-dark-66 bg-transparent border-b border-gray-200 dark:border-bw-text-dark-66">
                             <tr>
                                 <th className="p-4 w-4">
                                     <div className="flex items-center">
-                                        <input type="checkbox" className="w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-light-dark bg-bw-card-dark checked:bg-bw-border-selected checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]" />
+                                        <input type="checkbox" className="w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-dark-33 bg-bw-card-dark checked:bg-bw-purple checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]" />
                                     </div>
                                 </th>
                                 <th className="px-4 py-3 font-medium cursor-pointer group hover:text-gray-600 dark:hover:text-gray-300" onClick={() => handleSort('id')}>
@@ -205,14 +205,14 @@ const OrderListView: React.FC = () => {
                             {paginatedOrders.length > 0 ? paginatedOrders.map((order, index) => {
                                 const isSelected = selected.has(order.id);
                                 return (
-                                    <tr key={`${order.id}-${index}`} className={`group border-t border-gray-200 dark:border-bw-text-light-dark first:border-t-0 hover:border-t-transparent [&:hover+tr]:border-t-transparent hover:bg-gray-100 dark:hover:bg-white/5 transition-colors ${isSelected ? 'bg-gray-50 dark:bg-white/5' : ''}`}>
+                                    <tr key={`${order.id}-${index}`} className={`group border-t border-gray-200 dark:border-bw-text-dark-33 first:border-t-0 hover:border-t-transparent [&:hover+tr]:border-t-transparent hover:bg-gray-100 dark:hover:bg-white/5 transition-colors ${isSelected ? 'bg-gray-50 dark:bg-white/5' : ''}`}>
                                         <td className="p-4">
                                             <div className="flex items-center cursor-pointer" onClick={() => toggleSelect(order.id)}>
                                                 <input
                                                     type="checkbox"
                                                     checked={isSelected}
                                                     onChange={() => { }} // Handled by parent div onClick
-                                                    className={`w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-light-dark bg-bw-card-dark checked:bg-bw-border-selected checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]
+                                                    className={`w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-dark-33 bg-bw-card-dark checked:bg-bw-purple checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]
                                                     transition-opacity ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
                                                 />
                                             </div>

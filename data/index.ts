@@ -20,10 +20,10 @@ export const revenueData: RevenueDataPoint[] = [
 ];
 
 export const locationData: LocationData[] = [
-    { name: 'New York', value: '72K', percentage: 75, color: 'bg-bw-sky-light' },
-    { name: 'San Francisco', value: '39K', percentage: 50, color: 'bg-bw-sky-light' },
-    { name: 'Sydney', value: '25K', percentage: 33, color: 'bg-bw-sky-light' },
-    { name: 'Singapore', value: '61K', percentage: 67, color: 'bg-bw-sky-light' },
+    { name: 'New York', value: '72K', percentage: 75, color: '#A8C5DA' },
+    { name: 'San Francisco', value: '39K', percentage: 50, color: '#A8C5DA' },
+    { name: 'Sydney', value: '25K', percentage: 33, color: '#A8C5DA' },
+    { name: 'Singapore', value: '61K', percentage: 67, color: '#A8C5DA' },
 ];
 
 export const salesData: SalesDataPoint[] = [

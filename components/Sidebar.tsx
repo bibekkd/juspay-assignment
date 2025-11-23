@@ -12,28 +12,28 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
     const [eCommerceOpen, setECommerceOpen] = useState(false);
 
     const navItemClass = (viewName: string) => `
-    flex items-center gap-2 px-3 py-1.5 rounded-sm cursor-pointer text-ag-14 transition-colors mb-1 relative
+    flex items-center gap-2 px-3 py-1.5 rounded-sm cursor-pointer text-ag-14 transition-colors mb-1 relative dark:text-white
     ${activeView === viewName
-            ? 'bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-medium before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-4.5 before:w-1 before:bg-bw-border-selected before:rounded-full'
-            : 'text-gray-500 dark:text-white hover:bg-gray-50 dark:hover:bg-white/5'}
+            ? 'bg-bw-nav-hover-light dark:bg-bw-border-dark before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-4.5 before:w-1 before:bg-bw-purple before:dark:bg-bw-bg-dark before:rounded-full'
+            : 'hover:bg-bw-nav-hover-light dark:hover:bg-bw-border-dark'}
   `;
 
     return (
-        <aside className="w-[212px] h-screen flex flex-col border-r border-gray-400 dark:border-bw-border-dark bg-white dark:bg-bw-sidebar-dark transition-colors duration-300 flex-shrink-0">
+        <aside className="w-[212px] h-screen flex flex-col border-r border-gray-400 dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark transition-colors duration-300 flex-shrink-0">
             {/* User / Brand Area */}
             <div className="p-4 flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                     <img src="https://picsum.photos/32/32" alt="User" className="w-full h-full object-cover" />
                 </div>
-                <span className="text-sm font-medium text-bw-text-dark dark:text-white">ByeWind</span>
+                <span className="text-sm font-regular text-bw-bg-dark dark:text-white">ByeWind</span>
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 scrollbar-hide">
                 <div className="flex gap-6 text-sm mb-4 px-1">
                     <span
                         className={`cursor-pointer transition-colors ${selectedTab === 'favorites'
-                            ? 'text-gray-900 dark:text-bw-text-dark'
-                            : 'text-bw-text-light-dark hover:text-bw-text-dark dark:hover:text-bw-text-dark'
+                            ? 'text-bw-text-secondary dark:text-bw-text-dark-66'
+                            : 'text-bw-text-tertiary hover:text-bw-text-secondary dark:text-bw-text-dark-33 dark:hover:text-bw-text-dark-66'
                             }`}
                         onClick={() => setSelectedTab('favorites')}
                     >
@@ -41,8 +41,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                     </span>
                     <span
                         className={`cursor-pointer transition-colors ${selectedTab === 'recently'
-                            ? 'text-gray-900 dark:text-bw-text-dark'
-                            : 'text-bw-text-light-dark hover:text-bw-text-dark dark:hover:text-bw-text-dark'
+                            ? 'text-bw-text-secondary dark:text-bw-text-dark-66'
+                            : 'text-bw-text-tertiary hover:text-bw-text-secondary dark:text-bw-text-dark-33 dark:hover:text-bw-text-dark-66'
                             }`}
                         onClick={() => setSelectedTab('recently')}
                     >
@@ -52,12 +52,12 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
 
                 {selectedTab === 'favorites' && (
                     <div className="space-y-2 mb-6 px-1">
-                        <div className="flex items-center gap-3 text-gray-900 dark:text-white py-1 px-1 cursor-pointer text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-bw-text-light-dark"></span>
+                        <div className="flex items-center gap-3 text-bw-bg-dark dark:text-white py-1 px-1 cursor-pointer text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-bw-text-dark-33"></span>
                             Overview
                         </div>
-                        <div className="flex items-center gap-3 text-gray-900 dark:text-white py-1 px-1 cursor-pointer text-sm">
-                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-bw-text-light-dark"></span>
+                        <div className="flex items-center gap-3 text-bw-bg-dark dark:text-white py-1 px-1 cursor-pointer text-sm">
+                            <span className="w-1.5 h-1.5 rounded-full bg-gray-300 dark:bg-bw-text-dark-33"></span>
                             Projects
                         </div>
                     </div>
@@ -65,7 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
 
                 <ul className="space-y-6">
                     <li>
-                        <div className="text-sm font-regular text-bw-text-dark mb-2 px-2">Dashboards</div>
+                        <div className="text-sm font-regular text-bw-text-secondary dark:text-bw-text-dark-66 mb-2 px-2">Dashboards</div>
                         <div className={`${navItemClass('default')} pl-9`} onClick={() => onChangeView('default')}>
                             <Icons.Dashboard
                                 className="text-[#1C1C1C] dark:text-white"
@@ -77,13 +77,13 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                             {eCommerceOpen ? (
                                 <Icons.ChevronDown
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             ) : (
                                 <Icons.ChevronRight
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             )}
@@ -95,17 +95,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         </div>
                         {eCommerceOpen && (
                             <div className="pl-9 space-y-1 mb-2">
-                                <div className="text-gray-900 dark:text-white py-1 cursor-pointer text-sm">Overview</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Customers</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white" onClick={() => onChangeView('orders')}>Orders</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Revenue</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Growth</div>
+                                <div className="text-bw-bg-dark dark:text-white py-1 cursor-pointer text-sm hover:text-bw-text-secondary dark:hover:text-white">Overview</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Customers</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white" onClick={() => onChangeView('orders')}>Orders</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Revenue</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Growth</div>
                             </div>
                         )}
                         <div className={navItemClass('projects')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Projects
@@ -117,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('courses')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Courses
@@ -129,18 +129,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                     </li>
 
                     <li>
-                        <div className="text-sm font-regular text-bw-text-dark mb-2 px-2">Pages</div>
+                        <div className="text-sm font-regular text-bw-text-secondary dark:text-bw-text-dark-66 mb-2 px-2">Pages</div>
                         <div className={`${navItemClass('userProfile')} cursor-pointer`} onClick={() => setUserProfileOpen(!userProfileOpen)}>
                             {userProfileOpen ? (
                                 <Icons.ChevronDown
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             ) : (
                                 <Icons.ChevronRight
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             )}
@@ -154,18 +154,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         {/* Submenu */}
                         {userProfileOpen && (
                             <div className="pl-9 space-y-1 mb-2">
-                                <div className="text-gray-900 dark:text-white py-1 cursor-pointer">Overview</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Projects</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Campaigns</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Documents</div>
-                                <div className="text-gray-500 dark:text-white text-sm py-1 cursor-pointer hover:text-gray-900 dark:hover:text-white">Followers</div>
+                                <div className="text-bw-bg-dark dark:text-white py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Overview</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Projects</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Campaigns</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Documents</div>
+                                <div className="text-bw-bg-dark dark:text-white text-sm py-1 cursor-pointer hover:text-bw-text-secondary dark:hover:text-white">Followers</div>
                             </div>
                         )}
 
                         <div className={navItemClass('account')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Account
@@ -177,7 +177,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('corporate')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Corporate
@@ -189,7 +189,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('blog')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Blog
@@ -201,7 +201,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('social')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-light-dark"
+                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Social

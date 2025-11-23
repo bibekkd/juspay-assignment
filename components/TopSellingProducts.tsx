@@ -21,7 +21,7 @@ export const TopSellingProducts: React.FC = () => {
             <h3 className="text-sm font-semibold mb-3 text-gray-900 font-ag-14 dark:text-white">Top Selling Products</h3>
             <div className="overflow-x-auto">
                 <table className="w-full text-sm text-left text-gray-500 dark:text-white">
-                    <thead className="text-xs text-bw-text-dark border-b border-gray-200 dark:border-bw-text-light-dark">
+                    <thead className="text-xs text-bw-text-dark-66 border-b border-gray-200 dark:border-bw-text-dark-33">
                         <tr>
                             <th className="py-3 font-normal">Name</th>
                             <th className="py-3 font-normal">Price</th>
