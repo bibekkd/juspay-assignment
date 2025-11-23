@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar';
 import RightSidebar from '../components/RightSidebar';
 import DashboardView from '../components/DashboardView';
