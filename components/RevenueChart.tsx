@@ -32,17 +32,21 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
             {/* Gradient Overlays for Peaks */}
             {/* Peak 1 (Feb/Mar) - Cyan Glow between lines */}
             <div
-                className={`absolute ${isDark ? 'top-[46%] left-[12%] w-[300px] h-[20px] pointer-events-none blur-xl' : 'top-[42%] left-[15%] w-[250px] h-[30px] pointer-events-none blur-lg'}`}
+                className={`absolute ${isDark ? 'top-[46%] left-[12%] w-[300px] h-[15px] pointer-events-none blur-xl' : 'top-[42%] left-[12%] w-[250px] h-[25px] pointer-events-none blur-lg'}`}
                 style={{
                     background: 'radial-gradient(circle, rgba(168, 197, 218, 0.6) 0%, rgba(168, 197, 218, 0) 65%)',
                     zIndex: 0
                 }}
             />
-            {/* Peak 2 (Jun) - Purple Glow between lines */}
+            {/* Peak 2 (Jun) - Purple Glow (dark) / Gray Glow (light) between lines */}
             <div
-                className="absolute top-[38%] left-[68%] w-[80px] h-[60px] pointer-events-none blur-2xl"
+                className={`absolute ${isDark ?
+                    'top-[43%] left-[53%] w-[300px] h-[15px] pointer-events-none blur-xl' :
+                    'top-[40%] left-[53%] w-[300px] h-[20px] pointer-events-none blur-md'}`}
                 style={{
-                    background: 'radial-gradient(circle, rgba(198, 199, 248, 0.6) 0%, rgba(198, 199, 248, 0) 65%)',
+                    background: isDark
+                        ? 'radial-gradient(circle, rgba(198, 199, 248, 0.6) 0%, rgba(198, 199, 248, 0) 65%)'
+                        : 'radial-gradient(circle, rgba(28, 28, 28, 0.2) 0%, rgba(28, 28, 28, 0) 65%)',
                     zIndex: 0
                 }}
             />
