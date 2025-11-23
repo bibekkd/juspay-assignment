@@ -9,7 +9,7 @@ export const TotalSalesChart: React.FC = () => {
     return (
         <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6 flex flex-col h-auto xl:h-[370px]">
             <h3 className="text-sm font-semibold mb-3 mt-1 text-gray-900 dark:text-white ml-2">Total Sales</h3>
-            <div className="flex-1 relative min-h-[160px]">
+            <div className="relative h-[250px] w-full xl:h-auto xl:flex-1 min-h-[160px]">
                 <SalesPieChart data={salesData} />
             </div>
             <div className="flex flex-col space-y-4 mx-2 mt-4">

@@ -8,14 +8,30 @@ interface SalesPieChartProps {
 
 export const SalesPieChart: React.FC<SalesPieChartProps> = ({ data }) => {
     const totalSales = data.reduce((acc, curr) => acc + curr.value, 0);
+    const [isLargeDevice, setIsLargeDevice] = React.useState(true);
+
+    React.useEffect(() => {
+        const handleResize = () => {
+            setIsLargeDevice(window.innerWidth >= 1280);
+        };
+
+        // Initial check
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const innerRadius = isLargeDevice ? 40 : 60;
+    const outerRadius = isLargeDevice ? 60 : 80;
 
     return (
         <ResponsiveContainer width="100%" height="100%">
             <PieChart>
                 <Pie
                     data={data}
-                    innerRadius={40}
-                    outerRadius={60}
+                    innerRadius={innerRadius}
+                    outerRadius={outerRadius}
                     paddingAngle={5}
                     cornerRadius={8}
                     dataKey="value"
