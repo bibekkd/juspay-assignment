@@ -349,7 +349,7 @@ This project is created as part of the Juspay UI Developer Assignment.
 
 ## 👨‍💻 Author
 
-**Bibek Kumar**
+**Bibek Kumar Dey**
 
 - GitHub: [@bibekkd](https://github.com/bibekkd)
 - Project Repository: [juspay-assignment](https://github.com/bibekkd/juspay-assignment)
