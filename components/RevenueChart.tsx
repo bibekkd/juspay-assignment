@@ -58,7 +58,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
                     <span className="text-bw-text-dark dark:text-white">Current Week $58,211</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs">
-                    <span className={`w-2 h-2 rounded-full bg-[${lineColor}]`}></span>
+                    <span className={`w-2 h-2 rounded-full ${isDark ? "bg-[#C6C7F8]" : "bg-[#1C1C1C]"}`}></span>
                     <span className="text-bw-text-dark dark:text-white">Previous Week $68,768</span>
                 </div>
             </div>
