@@ -68,7 +68,7 @@ const DashboardView: React.FC = () => {
 
                 {/* Right Column Group (Projections) */}
                 <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark p-2 rounded-2xl h-[252px]">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white font-inter mx-4.5 my-5">Projections vs Actuals</h3>
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white font-inter mx-5 my-5">Projections vs Actuals</h3>
                     <div className="mx-3 h-[160px]">
                         <ProjectionsChart data={projectionData} />
                     </div>
