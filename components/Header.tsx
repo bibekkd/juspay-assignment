@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({
 
             <div className="flex items-center gap-4">
                 <div className="relative hidden md:block">
-                    <Icons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-bw-text-tertiary" size={16} />
+                    <Icons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-bw-text-tertiary dark:text-bw-text-dark-33" size={16} />
                     <input
                         type="text"
                         placeholder="Search"
