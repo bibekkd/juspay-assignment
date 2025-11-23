@@ -12,7 +12,7 @@ interface StatCardProps {
 
 export const StatCard: React.FC<StatCardProps> = ({ title, value, change, trend, className = "", isLightBackground = false }) => {
     const textColorClass = isLightBackground ? "text-gray-900" : "text-gray-900 dark:text-white";
-    const arrowColorClass = isLightBackground ? "text-[#1C1C1C]" : "text-[#1C1C1C] dark:text-white";
+    const arrowColorClass = isLightBackground ? "text-bw-bg-dark" : "text-bw-bg-dark dark:text-white";
 
     return (
         <div className={`rounded-2xl p-6 flex flex-col justify-between h-[112px] ${textColorClass} ${className}`}>

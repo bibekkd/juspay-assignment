@@ -16,7 +16,7 @@ export const TotalSalesChart: React.FC = () => {
             <div className="flex flex-row justify-between mx-2">
                 <div className="flex flex-col space-y-4">
                     <div className="flex flex-row text-xs">
-                        <div className="flex items-center gap-2 text-gray-500 dark:text-white"><span className="w-1.5 h-1.5 rounded-full bg-[#1C1C1C] dark:bg-[#C6C7F8]"></span>Direct</div>
+                        <div className="flex items-center gap-2 text-gray-500 dark:text-white"><span className="w-1.5 h-1.5 rounded-full bg-bw-bg-dark dark:bg-[#C6C7F8]"></span>Direct</div>
                     </div>
                     <div className="flex flex-row text-xs">
                         <div className="flex items-center gap-2 text-gray-500 dark:text-white"><span className="w-1.5 h-1.5 rounded-full bg-[#BAEDBD]"></span>Affiliate</div>

@@ -68,7 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className="text-sm font-regular text-bw-text-secondary dark:text-bw-text-dark-66 mb-2 px-2">Dashboards</div>
                         <div className={`${navItemClass('default')} pl-9`} onClick={() => onChangeView('default')}>
                             <Icons.Dashboard
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Default
@@ -77,18 +77,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                             {eCommerceOpen ? (
                                 <Icons.ChevronDown
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                    className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             ) : (
                                 <Icons.ChevronRight
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                    className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             )}
                             <Icons.eCommerce
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             eCommerce
@@ -105,11 +105,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('projects')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Projects
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Projects
@@ -117,11 +117,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('courses')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Courses
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Online Courses
@@ -134,18 +134,18 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                             {userProfileOpen ? (
                                 <Icons.ChevronDown
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                    className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             ) : (
                                 <Icons.ChevronRight
                                     size={16}
-                                    className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                    className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                     color="currentColor"
                                 />
                             )}
                             <Icons.Profile
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             <span className="dark:text-white text-black flex-1 ">User Profile</span>
@@ -165,11 +165,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('account')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Account
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Account
@@ -177,11 +177,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('corporate')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Corporate
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Corporate
@@ -189,11 +189,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('blog')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Blog
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Blog
@@ -201,11 +201,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
                         <div className={navItemClass('social')}>
                             <Icons.ChevronRight
                                 size={16}
-                                className="text-[#1C1C1C] dark:text-bw-text-dark-33"
+                                className="text-bw-bg-dark dark:text-bw-text-dark-33"
                                 color="currentColor"
                             />
                             <Icons.Social
-                                className="text-[#1C1C1C] dark:text-white"
+                                className="text-bw-bg-dark dark:text-white"
                                 color="currentColor"
                             />
                             Social

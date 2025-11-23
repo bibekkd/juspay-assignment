@@ -35,7 +35,7 @@ const RightSidebar: React.FC = () => {
                 <div className="space-y-4">
                     {notifications.map((item) => (
                         <div key={item.id} className="flex gap-3">
-                            <div className="w-6 h-6 rounded-sm bg-[#E3F5FF] text-blue-600 dark:bg-[#E3F5FF] dark:text-[#1C1C1C] flex items-center justify-center text-xs font-bold shrink-0">
+                            <div className="w-6 h-6 rounded-sm bg-[#E3F5FF] text-blue-600 dark:bg-[#E3F5FF] dark:text-bw-bg-dark flex items-center justify-center text-xs font-bold shrink-0">
                                 {item.type === 'bug' ? <Icons.Bug /> :
                                     item.type === 'user' ? <Icons.Person /> :
                                         <Icons.Wave />

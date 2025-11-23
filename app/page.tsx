@@ -30,8 +30,8 @@ export default function Home() {
 
       {/* Mobile Menu Button Overlay - visible only when sidebar is closed on mobile */}
       {!leftSidebarOpen && (
-        <div className="md:hidden fixed top-4 left-4 z-50">
-          <button onClick={toggleLeftSidebar} className="p-2 bg-white dark:bg-bw-bg-dark rounded shadow border border-gray-200 dark:border-bw-border-dark text-gray-700 dark:text-white">
+        <div className="md:hidden fixed top-3 left-4 z-50">
+          <button onClick={toggleLeftSidebar} className="p-2 bg-white dark:bg-bw-bg-dark rounded dark:border-bw-border-dark text-gray-700 dark:text-white">
             <Icons.Sidebar className="transform rotate-180" />
           </button>
         </div>
