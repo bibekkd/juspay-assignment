@@ -53,6 +53,7 @@ module.exports = {
                 'bw-sidebar-dark': '#1C1C1C',
                 'bw-bg-light': '#F7F9FB',
                 'bw-bg-dark': '#1C1C1C',
+                'bw-bg-dark-66': '#1C1C1C66',
                 'bw-card-light': '#F7F9FB',
                 'bw-card-dark': '#FFFFFF0D',
                 'bw-customer-light': '#E3F5FF',

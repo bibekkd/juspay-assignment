@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Icons } from './Icons';
+import { Clipboard as ClipboardIcon } from 'lucide-react';
 import { Order } from '@/types';
 
 // Expanded Mock Data for Pagination
@@ -45,12 +46,12 @@ const OrderListView: React.FC = () => {
 
     const getStatusColor = (status: string) => {
         switch (status) {
-            case 'In Progress': return 'text-blue-500';
-            case 'Complete': return 'text-green-500';
-            case 'Pending': return 'text-blue-300';
-            case 'Approved': return 'text-yellow-500';
-            case 'Rejected': return 'text-gray-400';
-            default: return 'text-gray-500';
+            case 'In Progress': return { text: 'text-[#8A8CD9]', dot: 'bg-[#95A4FC]' };
+            case 'Complete': return { text: 'text-[#4AA785]', dot: 'bg-[#A1E3CB]' };
+            case 'Pending': return { text: 'text-[#59A8D4]', dot: 'bg-[#B1E3FF]' };
+            case 'Approved': return { text: 'text-[#FFC555]', dot: 'bg-[#FFE999]' };
+            case 'Rejected': return { text: 'text-[#FFFFFF66]', dot: 'bg-[#FFFFFF66]' };
+            default: return { text: 'text-gray-500', dot: 'bg-gray-500' };
         }
     };
 
@@ -137,14 +138,14 @@ const OrderListView: React.FC = () => {
                             <Icons.Sort size={18} className="text-gray-500 dark:text-white" />
                         </button>
                     </div>
-                    <div className="relative w-full md:w-64">
-                        <Icons.Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={16} />
+                    <div className="flex items-center gap-2 w-[160px] h-[28px] bg-white dark:bg-bw-bg-dark-66 border border-gray-200 dark:border-bw-border-dark rounded-lg px-2 py-1">
+                        <Icons.Search className="text-gray-400 dark:text-bw-text-light-dark" size={16} />
                         <input
                             type="text"
                             placeholder="Search"
                             value={searchTerm}
                             onChange={(e) => { setSearchTerm(e.target.value); setCurrentPage(1); }}
-                            className="w-full pl-9 pr-4 py-1.5 bg-white dark:bg-black/20 border border-transparent focus:border-blue-500 rounded-lg text-sm text-gray-900 dark:text-white outline-none transition-all"
+                            className="w-full bg-transparent text-sm text-gray-900 dark:text-bw-text-light-dark placeholder:text-gray-400 dark:placeholder:text-bw-text-light-dark outline-none"
                         />
                     </div>
                 </div>
@@ -169,14 +170,14 @@ const OrderListView: React.FC = () => {
             </div>
 
             {/* Table Container */}
-            <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark rounded-xl overflow-hidden flex flex-col shadow-sm border border-gray-100 dark:border-white/5">
+            <div className="flex-1 bg-bw-card-light dark:bg-transparent overflow-hidden flex flex-col">
                 <div className="overflow-x-auto flex-1 scrollbar-hide">
-                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <thead className="text-xs text-gray-400 uppercase bg-transparent border-b border-gray-200 dark:border-white/10">
+                    <table className="w-full text-sm text-left text-bw-text-dark dark:text-bw-text-dark">
+                        <thead className="text-xs text-bw-text-dark dark:text-bw-text-dark bg-transparent border-b border-gray-200 dark:border-bw-text-dark">
                             <tr>
                                 <th className="p-4 w-4">
                                     <div className="flex items-center">
-                                        <input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <input type="checkbox" className="w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-light-dark bg-bw-card-dark checked:bg-bw-border-selected checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]" />
                                     </div>
                                 </th>
                                 <th className="px-4 py-3 font-medium cursor-pointer group hover:text-gray-600 dark:hover:text-gray-300" onClick={() => handleSort('id')}>
@@ -200,17 +201,20 @@ const OrderListView: React.FC = () => {
                                 <th className="px-4 py-3"></th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-200 dark:divide-white/10">
+                        <tbody>
                             {paginatedOrders.length > 0 ? paginatedOrders.map((order, index) => {
                                 const isSelected = selected.has(order.id);
                                 return (
-                                    <tr key={`${order.id}-${index}`} className={`hover:bg-gray-100 dark:hover:bg-white/5 transition-colors ${isSelected ? 'bg-gray-50 dark:bg-white/5' : ''}`}>
+                                    <tr key={`${order.id}-${index}`} className={`group border-t border-gray-200 dark:border-bw-text-light-dark first:border-t-0 hover:border-t-transparent [&:hover+tr]:border-t-transparent hover:bg-gray-100 dark:hover:bg-white/5 transition-colors ${isSelected ? 'bg-gray-50 dark:bg-white/5' : ''}`}>
                                         <td className="p-4">
                                             <div className="flex items-center cursor-pointer" onClick={() => toggleSelect(order.id)}>
-                                                {isSelected
-                                                    ? <Icons.Check className="text-blue-500" size={18} />
-                                                    : <div className="w-[18px] h-[18px] border border-gray-300 rounded dark:border-gray-600 bg-white dark:bg-transparent"></div>
-                                                }
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isSelected}
+                                                    onChange={() => { }} // Handled by parent div onClick
+                                                    className={`w-4 h-4 rounded appearance-none border border-gray-300 dark:border-bw-text-light-dark bg-bw-card-dark checked:bg-bw-border-selected checked:border-transparent checked:bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUMxQzFDIiBzdHJva2Utd2lkdGg9IjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHBvbHlsaW5lIHBvaW50cz0iMjAgNiA5IDE3IDQgMTIiPjwvcG9seWxpbmU+PC9zdmc+')] checked:bg-center checked:bg-no-repeat checked:bg-[length:12px_12px]
+                                                    transition-opacity ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}
+                                                />
                                             </div>
                                         </td>
                                         <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">{order.id}</td>
@@ -221,19 +225,32 @@ const OrderListView: React.FC = () => {
                                             </div>
                                         </td>
                                         <td className="px-4 py-3 text-gray-900 dark:text-white">{order.project}</td>
-                                        <td className="px-4 py-3 text-gray-900 dark:text-white">{order.address}</td>
-                                        <td className="px-4 py-3 flex items-center gap-2 text-gray-500 dark:text-gray-400">
+                                        <td className="px-4 py-3 text-gray-900 dark:text-white group/address">
+                                            <div className="flex items-center gap-2">
+                                                <span>{order.address}</span>
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation();
+                                                        navigator.clipboard.writeText(order.address);
+                                                    }}
+                                                    className="opacity-0 group-hover/address:opacity-100 transition-opacity text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white"
+                                                >
+                                                    <ClipboardIcon size={14} />
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td className="px-4 py-3 flex items-center gap-2 text-gray-500 dark:text-white">
                                             <Icons.Calendar size={14} />
                                             {order.date}
                                         </td>
                                         <td className="px-4 py-3">
                                             <div className="flex items-center gap-2">
-                                                <span className={`w-2 h-2 rounded-full ${getStatusColor(order.status).replace('text-', 'bg-')}`}></span>
-                                                <span className={getStatusColor(order.status)}>{order.status}</span>
+                                                <span className={`w-2 h-2 rounded-full ${getStatusColor(order.status).dot}`}></span>
+                                                <span className={getStatusColor(order.status).text}>{order.status}</span>
                                             </div>
                                         </td>
                                         <td className="px-4 py-3 text-right">
-                                            <Icons.More size={16} className="cursor-pointer hover:text-gray-900 dark:hover:text-white" />
+                                            <Icons.More size={16} className={`cursor-pointer hover:text-gray-900 dark:hover:text-white transition-opacity ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
                                         </td>
                                     </tr>
                                 )
@@ -249,13 +266,13 @@ const OrderListView: React.FC = () => {
                 </div>
 
                 {/* Pagination */}
-                <div className="p-4 border-t border-gray-200 dark:border-white/10 flex justify-end items-center gap-2 text-sm text-gray-500">
+                <div className="p-4 flex justify-end items-center gap-2 text-sm text-gray-500 dark:text-white">
                     <button
                         onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                         disabled={currentPage === 1}
                         className="p-1 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
                     >
-                        <Icons.ArrowDown className="rotate-90" />
+                        <Icons.ChevronRight className="rotate-180" />
                     </button>
 
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -275,7 +292,7 @@ const OrderListView: React.FC = () => {
                         disabled={currentPage === totalPages || totalPages === 0}
                         className="p-1 hover:text-gray-900 dark:hover:text-white disabled:opacity-30 disabled:cursor-not-allowed"
                     >
-                        <Icons.ArrowUp className="rotate-90" />
+                        <Icons.ChevronRight className="rotate-270" />
                     </button>
                 </div>
             </div>
