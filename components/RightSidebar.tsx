@@ -31,7 +31,7 @@ const RightSidebar: React.FC = () => {
         <aside className="w-[280px] h-screen border-l border-bw-border-muted dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark overflow-y-auto hidden xl:block p-4 flex-shrink-0">
             {/* Notifications */}
             <div className="mb-8">
-                <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 text-inter mt-4">Notifications</h3>
+                <h3 className="text-sm font-semibold text-bw-bg-dark dark:text-white mb-4 text-inter mt-4">Notifications</h3>
                 <div className="space-y-4">
                     {notifications.map((item) => (
                         <div key={item.id} className="flex gap-3">
@@ -43,7 +43,8 @@ const RightSidebar: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-[12px] text-bw-text-dark-66">{item.time}</p>
+                                <p className="text-[12px] 
+                                text-bw-text-secondary dark:text-bw-text-dark-66">{item.time}</p>
                             </div>
                         </div>
                     ))}
@@ -61,7 +62,7 @@ const RightSidebar: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-900 dark:text-white line-clamp-1 text-ag-14">{item.title}</p>
-                                <p className="text-[12px] text-bw-text-dark-66">{item.time}</p>
+                                <p className="text-[12px] text-bw-text-secondary dark:text-bw-text-dark-66">{item.time}</p>
                             </div>
                         </div>
                     ))}
