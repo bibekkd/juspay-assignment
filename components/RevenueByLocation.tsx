@@ -8,7 +8,7 @@ export const RevenueByLocation: React.FC = () => {
     return (
         <div className="flex-1 bg-bw-card-light dark:bg-bw-card-dark rounded-2xl p-6">
             <h3 className="text-sm font-semibold mb-3 text-gray-900 dark:text-white ml-2">Revenue by Location</h3>
-            <div className="h-[82px] mb-4 w-[154px]">
+            <div className="w-full h-[180px] lg:h-[120px] mb-6">
                 <WorldMap />
             </div>
             <div className="space-y-3 mx-2">

@@ -32,7 +32,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
             {/* Gradient Overlays for Peaks */}
             {/* Peak 1 (Feb/Mar) - Cyan Glow between lines */}
             <div
-                className={`absolute ${isDark ? 'top-[46%] left-[12%] w-[300px] h-[15px] pointer-events-none blur-xl' : 'top-[42%] left-[12%] w-[250px] h-[25px] pointer-events-none blur-lg'}`}
+                className={`hidden md:block absolute ${isDark ? 'top-[46%] left-[12%] w-[300px] h-[15px] pointer-events-none blur-xl' : 'top-[42%] left-[12%] w-[250px] h-[25px] pointer-events-none blur-lg'}`}
                 style={{
                     background: 'radial-gradient(circle, rgba(168, 197, 218, 0.6) 0%, rgba(168, 197, 218, 0) 65%)',
                     zIndex: 0
@@ -40,8 +40,8 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ data }) => {
             />
             {/* Peak 2 (Jun) - Purple Glow (dark) / Gray Glow (light) between lines */}
             <div
-                className={`absolute ${isDark ?
-                    'top-[43%] left-[53%] w-[300px] h-[15px] pointer-events-none blur-xl' :
+                className={`hidden md:block absolute ${isDark ?
+                    'top-[41%] left-[53%] w-[300px] h-[15px] pointer-events-none blur-xl' :
                     'top-[40%] left-[53%] w-[300px] h-[20px] pointer-events-none blur-md'}`}
                 style={{
                     background: isDark

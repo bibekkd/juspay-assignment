@@ -19,17 +19,17 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onChangeView }) => {
   `;
 
     return (
-        <aside className="w-[212px] h-screen flex flex-col border-r border-bw-border-muted dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark transition-colors duration-300 flex-shrink-0">
+        <aside className="w-[180px] md:w-[212px] h-screen flex flex-col border-r border-bw-border-muted dark:border-bw-border-dark bg-white dark:bg-bw-bg-dark transition-colors duration-300 flex-shrink-0">
             {/* User / Brand Area */}
-            <div className="p-4 flex items-center gap-3 mb-4">
+            <div className="p-3 md:p-4 flex items-center gap-3 mb-4">
                 <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                     <img src="https://picsum.photos/32/32" alt="User" className="w-full h-full object-cover" />
                 </div>
                 <span className="text-sm font-regular text-bw-bg-dark dark:text-white">ByeWind</span>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-4 scrollbar-hide">
-                <div className="flex gap-6 text-sm mb-4 px-1">
+            <div className="flex-1 overflow-y-auto px-2 md:px-4 scrollbar-hide">
+                <div className="flex gap-3 md:gap-6 text-sm mb-4 px-1">
                     <span
                         className={`cursor-pointer transition-colors ${selectedTab === 'favorites'
                             ? 'text-bw-text-secondary dark:text-bw-text-dark-66'

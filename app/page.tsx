@@ -32,15 +32,16 @@ export default function Home() {
       {!leftSidebarOpen && (
         <div className="md:hidden fixed top-3 left-4 z-50">
           <button onClick={toggleLeftSidebar} className="p-2 bg-white dark:bg-bw-bg-dark rounded dark:border-bw-border-dark text-gray-700 dark:text-white">
-            <Icons.Sidebar className="transform rotate-180" />
+            <Icons.Sidebar className="transform rotate-180"
+              color='currentColor' />
           </button>
         </div>
       )}
 
       {/* Main Sidebar Container - Controls width for collapse/expand */}
-      <div className={`${leftSidebarOpen ? 'w-[212px]' : 'w-0'} transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 h-full relative`}>
+      <div className={`${leftSidebarOpen ? 'w-[180px] md:w-[212px]' : 'w-0'} transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 h-full relative`}>
         {/* Inner container for fixed width content to prevent squashing during transition */}
-        <div className="w-[212px] h-full">
+        <div className="w-[180px] md:w-[212px] h-full">
           <Sidebar activeView={currentView} onChangeView={setCurrentView} />
         </div>
       </div>
